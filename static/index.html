@@ -46,15 +46,20 @@
                 var password = prompt("Enter password:");
             
                 // Loop to validate password
-                while (password !== "sigmasus124" or password == null) {
+                while (password !== "sigmasus124" or password !== "sigmasus1245" or password == null) {
                     password = prompt("Incorrect password. Please try again:");
                 }
             
                 // If correct password is entered, set cookie and grant access
                 if (password === "sigmasus124") {
                     alert("Access granted!");
-                    setCookie("pass", "124123", 7); // Set cookie to expire in 7 days
+                    setCookie("pass", "124123", 14); // Set cookie to expire in 7 days
             }
+                if (password === "sigmasus1245") {
+                    alert("Access granted!");
+                    setCookie("pass", "124123");
+            }
+                
         }
         </script>
             

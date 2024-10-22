@@ -14,50 +14,50 @@
         <script src="/libcurl/index.js"></script>
         <script src="/js/tabs.js" defer></script>
         <script>
-        // Function to get a cookie by name
-        function getCookie(name) {
-            let cookieArr = document.cookie.split("; ");
-            for (let i = 0; i < cookieArr.length; i++) {
-                let cookiePair = cookieArr[i].split("=");
-                if (name === cookiePair[0]) {
-                    return cookiePair[1];
+            // Function to get a cookie by name
+            function getCookie(name) {
+                let cookieArr = document.cookie.split("; ");
+                for (let i = 0; i < cookieArr.length; i++) {
+                    let cookiePair = cookieArr[i].split("=");
+                    if (name === cookiePair[0]) {
+                        return cookiePair[1];
+                    }
                 }
+                return null;
             }
-            return null;
-        }
-        
-        // Function to set a cookie with name, value, and expiration days
-        function setCookie(name, value, days) {
-            let date = new Date();
-            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // Expire in specified days
-            let expires = "expires=" + date.toUTCString();
-            document.cookie = name + "=" + value + "; " + expires + "; path=/";
-        }
-        
-        // Check if password cookie exists
-        var passwordCookie = getCookie("pass");
-        
-        if (passwordCookie === "124123") {
-            alert("Access Granted!");
-        } else {
-            // Prompt for password only once initially
-            var password = prompt("Enter password:");
-        
-            // Loop to validate password
-            while (password !== "sigmasus124" && password !== "sigmasus1245" && password !== null || password == null) {
-                password = prompt("Incorrect password. Please try again:");
-            }
-            // If correct password is entered, set cookie and grant access
-            if (password == "sigmasus124") {
-                alert("Access granted!");
-                setCookie("pass", "124123", 14); // Set cookie to expire in 14 days
-        }
-            if (password == "sigmasus1245") {
-                alert("Access granted!");
-                setCookie("pass", "124123");
-        }
             
-        }
+            // Function to set a cookie with name, value, and expiration days
+            function setCookie(name, value, days) {
+                let date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // Expire in specified days
+                let expires = "expires=" + date.toUTCString();
+                document.cookie = name + "=" + value + "; " + expires + "; path=/";
+            }
+            
+            // Check if password cookie exists
+            var passwordCookie = getCookie("pass");
+            
+            if (passwordCookie === "124123") {
+                alert("Access Granted!");
+            } else {
+                // Prompt for password only once initially
+                var password = prompt("Enter password:");
+            
+                // Loop to validate password
+                while (password !== "sigmasus124" && password !== "sigmasus1245" && password !== null || password == null) {
+                    password = prompt("Incorrect password. Please try again:");
+                }
+                // If correct password is entered, set cookie and grant access
+                if (password == "sigmasus124") {
+                    alert("Access granted!");
+                    setCookie("pass", "124123", 14); // Set cookie to expire in 14 days
+            }
+                if (password == "sigmasus1245") {
+                    alert("Access granted!");
+                    setCookie("pass", "124123");
+            }
+                
+            }
         </script>
         <script>
             (async () => {
